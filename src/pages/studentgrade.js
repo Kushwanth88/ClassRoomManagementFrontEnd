@@ -19,6 +19,7 @@ export default function StudentGrades() {
         `http://localhost:8080/api/studentgrade/${state.user.id}`
       );
       setGrades(response.data);
+      console.log("Grades fetched successfully:", response.data);
     } catch (error) {
       console.error("Failed to fetch grades:", error);
     }
@@ -48,6 +49,12 @@ export default function StudentGrades() {
   return (
     <div className="container">
       <div className="py-4">
+      <Link
+        to={`/api/Allsubmissions/${state.user.id}`}
+        className="btn btn-primary"
+      >
+        View All Submissions
+      </Link>
         <h2 className="text-center mb-4">Grades</h2>
         <table className="table border shadow">
           <thead>
@@ -97,6 +104,9 @@ export default function StudentGrades() {
             scores={grades.map((grade) => grade.score)}
           />
         </div>
+        {/* <Link to={`/api/Allsubmissions/${state.user.id}`} className="btn btn-primary">
+          View All Submissions
+        </Link> */}
       </div>
     </div>
   );
