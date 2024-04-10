@@ -76,6 +76,13 @@ export default function Grades() {
   return (
     <div className="container">
       <div className="py-4">
+        <div className="row">
+          <div className="col-md-6">
+            <Link to={"/api/Allassignment/"+state.user.id} className="btn btn-primary me-2">
+               View All Assignments
+            </Link>
+          </div>
+        </div>
         <h2 className="text-center mb-4">Grades</h2>
         <table className="table border shadow">
           <thead>
@@ -137,4 +144,3 @@ export default function Grades() {
     </div>
   );
 }
-
