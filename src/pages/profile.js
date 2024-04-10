@@ -96,9 +96,6 @@ export default function Profile() {
             >
               Go to {role === "student" ? "Student" : "Teacher"} Grades
             </button>
-            <Link className="btn btn-outline-danger" to="/">
-              Cancel
-            </Link>
           </div>
         </div>
       </div>
